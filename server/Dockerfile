@@ -7,11 +7,10 @@ WORKDIR /app
 #Copia todos los files del proyecto en el dir de trabajo
 COPY . .
 
-#Ejecutar 2 comandos:
-# 1- Limpiar y compilar el jar del back
-
-# 2.- Copiar el jar resultante al dir de trabajo
-RUN mvn clean package -DskipTests && cp /target/*.jar app.jar
+# Ejecutar 2 comandos:
+# 1- Limpiar y compilar el jar del backend
+# 2.- Copiar el jar resultante al directorio de trabajo
+RUN mvn clean package -DskipTests && cp target/*.jar app.jar
 
 #EXPONER LA IMAGEN
 EXPOSE 8081
